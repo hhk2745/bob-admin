@@ -3,11 +3,29 @@ import ReactDOM from 'react-dom/client';
 import './resources/css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
+import Root from "./routes/root";
+import ErrorPage from './error-page';
+import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import MemberPage from './pages/member';
+import IndexPage from './pages';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <IndexPage/>,
+    errorElement: <ErrorPage />,
+  },{
+    path: "/member",
+    element: <MemberPage/>,
+    errorElement: <ErrorPage />,
+  },
+]);
+
 root.render(
   <React.StrictMode>
-    <App />
+    <RouterProvider router={router} />
+    {/* <App /> */}
   </React.StrictMode>
 );
 
