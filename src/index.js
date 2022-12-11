@@ -1,13 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './resources/css/index.css';
+import './resources/css/bootstrap.min.css';
+import './resources/css/dashboard.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Root from "./routes/root";
 import ErrorPage from './error-page';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-import MemberPage from './pages/member';
 import IndexPage from './pages';
+import MemberPage from './pages/member';
+import CustomerPage from './pages/customer';
+import Dashboard from './pages/dashboard';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
@@ -16,8 +20,24 @@ const router = createBrowserRouter([
     element: <IndexPage/>,
     errorElement: <ErrorPage />,
   },{
-    path: "/member",
-    element: <MemberPage/>,
+    path: "/customer",
+    element: <CustomerPage/>,
+    errorElement: <ErrorPage />,
+  },{
+    path: "/dashboard",
+    element: <Dashboard/>,
+    errorElement: <ErrorPage />,
+  },{
+    path: "/menu",
+    element: <></>,
+    errorElement: <ErrorPage />,
+  },{
+    path: "/order",
+    element: <></>,
+    errorElement: <ErrorPage />,
+  },{
+    path: "/product",
+    element: <></>,
     errorElement: <ErrorPage />,
   },
 ]);

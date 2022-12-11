@@ -1,9 +1,12 @@
-import { useRouteError } from "react-router-dom";
+import { useEffect } from 'react';
+import { useNavigate, useRouteError } from "react-router-dom";
 
 export default function ErrorPage() {
   const error = useRouteError();
-  console.error(error);
-
+  const navigate = useNavigate();
+  useEffect(()=>{
+    console.error(error);
+  }, [])
   return (
     <div id="error-page">
       <h1>Oops!</h1>
@@ -11,6 +14,9 @@ export default function ErrorPage() {
       <p>
         <i>{error.statusText || error.message}</i>
       </p>
+      <button onClick={()=>{
+        navigate("/");
+      }}>메인페이지로</button>
     </div>
   );
 }
