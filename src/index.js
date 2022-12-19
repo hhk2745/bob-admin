@@ -1,17 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './resources/css/index.css';
-import './resources/css/bootstrap.min.css';
 import './resources/css/dashboard.css';
-import App from './App';
 import reportWebVitals from './reportWebVitals';
-import Root from "./routes/root";
 import ErrorPage from './error-page';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import IndexPage from './pages';
-import MemberPage from './pages/member';
 import CustomerPage from './pages/customer';
 import Dashboard from './pages/dashboard';
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 const router = createBrowserRouter([
