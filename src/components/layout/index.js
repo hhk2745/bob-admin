@@ -1,3 +1,4 @@
+import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom'
 
 const Layout = ({children})=>{
@@ -47,7 +48,7 @@ const Layout = ({children})=>{
         <div className="position-sticky pt-3 sidebar-sticky">
           <ul className="nav flex-column">
             {
-              links.map(m=><li className="nav-item">
+              links.map((m,idx)=><li className="nav-item" key={idx}>
                 <a className={`nav-link ${location.pathname === m.to ? 'active' : ''}`} aria-current="page" href="#" onClick={()=>{
                       navigate(m.to);
                   }}>

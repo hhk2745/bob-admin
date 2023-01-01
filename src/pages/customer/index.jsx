@@ -1,10 +1,24 @@
+import React from 'react';
+import { useEffect } from 'react'
 import { Col, Form, Row } from 'react-bootstrap'
+import { sample } from '../../api/sample'
 import Layout from '../../components/layout'
 import { NavScrollExample } from '../../components/nav'
 import AdvancedExample from '../../components/pagination'
 import ResponsiveBreakpointsExample from '../../components/table'
 
 const Customer = ()=>{
+
+  useEffect(()=>{
+    console.log('member page Effect');
+    
+    sample('http://localhost:8080/sample', 'get', {}).then(res=>{
+      console.log(res);
+      
+    });
+  }, []);
+
+
   return <Layout>
   <main className="col-md-9 ms-sm-auto col-lg-10 px-md-4">
     <div

@@ -1,14 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './resources/css/index.css';
-import './resources/css/dashboard.css';
+
 import reportWebVitals from './reportWebVitals';
 import ErrorPage from './error-page';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import IndexPage from './pages';
 import CustomerPage from './pages/customer';
 import Dashboard from './pages/dashboard';
+
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './resources/css/index.css';
+import './resources/css/dashboard.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
